@@ -1,11 +1,11 @@
-###Objetivo:
+#Objetivo:
 
 Criar uma infraestrutura para hospedar uma aplicação react.js com terraform:
 
 ![plano](https://user-images.githubusercontent.com/73920079/204109643-144b2dc4-11c9-482d-864d-746a6545e4e5.png)
 
 
-###Funcionalidades:
+#Funcionalidades:
 
 Configurar o Amazon 53
 Criar o CloudFront (cdn)
@@ -15,7 +15,8 @@ Criar o redirecionamento de acesso www para o bucket.
 
 
 
-Como funciona:
+#Como funciona:
+
 O usuário vai acessar a aplicação de fora da aws.
 A route53 vai direcionar para o cache da aplicação (cdn).
 A cdn vai verificar a região mais próxima do usuário e para retornar na menor latência
