@@ -18,14 +18,14 @@ Criar o redirecionamento de acesso www para o bucket.
 
 # Como funciona:
 
-O usuário vai acessar a aplicação de fora da aws.
+O usuário vai acessar o endereço da aplicação.
 
 A route53 vai direcionar para o cache da aplicação (cdn).
 
-A cdn vai verificar a região mais próxima do usuário e para retornar na menor latência
+A cdn vai verificar a região mais próxima do usuário e para poder retornar na menor latência.
 
 Caso já exista o cache na região, não vai acessar o bucket da aplicação.
 
-Caso não exista, ele vai buscar as informações no bucket.
+Caso não exista o cache ou ele esteja expirado, ele vai buscar as informações no bucket.
 
-Caso o usuário acesse utilizando o "www." ele será redirecionado para o bucket central da aplicação.
+Se o usuário entrar com www, ele vai ser redirecionado para o bucket sem www, para que seja centralizado o armazenamento da aplicação
