@@ -1,8 +1,11 @@
 //adiciona o policy.json ao bucket, 
 //para liberação de visualização do objeto publicamente
-data "template_file" "s3-public-policy"{
-    template = file("policy.json") #chama o template
-    vars = { bucket_name = local.domain}
+data "template_file" "s3-public-policy" {
+  template = file("policy.json")
+  vars = {
+    bucket_name = local.domain
+    cdn_oai     = aws_cloudfront_origin_access_identity.this.id
+  }
 }
 
 #reutiliza modulos do git para facilitar a criação
@@ -26,7 +29,7 @@ module "website" {
     enabled = true
   }
 
-  filepath = "${local.website_filepath}/build"
+  filepath = "${path.module}/../website/build"
   website = {
     index_document = "index.html"
     error_document = "index.html"

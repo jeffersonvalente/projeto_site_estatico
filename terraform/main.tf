@@ -5,7 +5,7 @@ terraform {
       version = "~> 4.0"
     }
   }
-    backend "s3" {} #utiliza o s3 para guardar o tflock.state
+  backend "s3" {} #utiliza o s3 para guardar o tflock.state
 }
 
 
