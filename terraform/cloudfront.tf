@@ -48,15 +48,15 @@ resource "aws_cloudfront_distribution" "this" {
     }
   }
 
-#  dynamic "viewer_certificate" {
-#    for_each = local.has_domain ? [] : [0]
-#    content {
-#      cloudfront_default_certificate = true
-#    }
-#  }
+  #  dynamic "viewer_certificate" {
+  #    for_each = local.has_domain ? [] : [0]
+  #    content {
+  #      cloudfront_default_certificate = true
+  #    }
+  #  }
 
   viewer_certificate {
-   cloudfront_default_certificate = true
+    cloudfront_default_certificate = true
   }
 
   #dynamic "viewer_certificate" {
