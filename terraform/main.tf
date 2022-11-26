@@ -10,13 +10,11 @@ terraform {
 
 
 provider "aws" {
-  region = "us-east-1"
-  profile = "tfsys"
+  region  = var.aws_region
+  profile = var.aws_profile
 }
 
 #https://registry.terraform.io/providers/hashicorp/random/latest/docs/resources/pet
 resource "random_pet" "website" {
   length = 5
 }
-
-###saudrhusdhfushdfaaaaaaa
