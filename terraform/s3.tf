@@ -4,7 +4,6 @@ data "template_file" "s3-public-policy" {
   template = file("policy.json")
   vars = {
     bucket_name = local.domain
-    cdn_oai     = aws_cloudfront_origin_access_identity.this.id
   }
 }
 
@@ -29,7 +28,7 @@ module "website" {
     enabled = true
   }
 
-  filepath = "${path.module}/../website/build"
+  filepath = "${path.module}/../site-do-jeffin/build"
   website = {
     index_document = "index.html"
     error_document = "index.html"
